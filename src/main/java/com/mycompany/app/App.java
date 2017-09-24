@@ -14,7 +14,7 @@ public class App{
     public static boolean search(ArrayList<String> arr, int input, String str){
       int count = 0;
       System.out.println("Searching..");
-      if (array == null) return false;
+      if (arr == null) return false;
     	for(int i = 0; i<arr.size(); i++){
 		if(arr.get(i).equals(str)){
 			count++;	
