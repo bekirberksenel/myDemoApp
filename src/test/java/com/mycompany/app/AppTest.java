@@ -1,64 +1,49 @@
 package com.mycompany.app;
-
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-
 /**
  * Unit test for simple App.
  */
 public class AppTest 
-    extends TestCase
-{
+    extends TestCase{
     /**
      * Create the test case
      *
      * @param testName name of the test case
      */
-
-    public void test1()
-    {
-	App p = new App();
-	String[] arr1 = {"Bekir","Berk","Omer","Fatih","Furkan","Can","Mehmet"};
- 	assertTrue(((p.iceriyorMu(arr1,27,"Bekir")).equals("Array Bekir iceriyor.")));      
+    public AppTest(String testName){
+        super(testName);
     }
-
     /**
      * @return the suite of tests being tested
      */
-    public void test2()
-    {
-	App pp = new App();
-	String[] arr1 = {"Bekir","Berk","Omer","Fatih","Furkan","Can","Mehmet"};
- 	assertFalse(((pp.iceriyorMu(arr1,27,"Burak")).equals("Array Burak iceriyor."))); 
-        
+    public static Test suite(){
+        return new TestSuite(AppTest.class);
     }
-
     /**
      * Rigourous Test :-)
      */
-    public void test3()
-    {
-	App ppp = new App();
-	String[] arr1 = {"Bekir","Bekir","Omer","Fatih","Furkan","Can","Mehmet"};
- 	assertTrue(((ppp.iceriyorMu(arr1,27,"Bekir")).equals("Array Bekir iceriyor."))); 
-        
+    public void testApp(){
+        assertTrue( true );
     }
-    public void test4()
-    {
-	App pppp = new App();
-	String[] arr1 = {"Bekir","Berk","Omer","Fatih","Furkan","Can","Mehmet"};
- 	assertTrue(((pppp.iceriyorMu(arr1,27,"Berk")).equals("Array Berk iceriyor."))); 
-        
+    public void testArrayIsNotFound(){
+      assertFalse(new App().search(null,1,"bekir"));
     }
-    public void test5()
-    {
-	App ppppp = new App();
-	String[] arr1 = {""};
- 	assertFalse(((ppppp.iceriyorMu(arr1,27,"Berk")).equals("Array eleman icermiyor."))); 
-        
+    public void testArrayIsEmpty(){
+      ArrayList<String> array = new ArrayList<>();
+      assertFalse(new App().search(array,1,"Berk"));
     }
-    
-
-
+    public void testBadInt(){
+	ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
+        assertFalse(new App().search(array,-2,"Bekir"));
+    }
+    public void testIsNotTrue(){
+      ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
+      assertFalse(new App().search(array,7,"Bekir"));
+    }
+     public void testIsTrue(){
+      ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
+      assertTrue(new App().search(array,2,"Bekir"));
+    }
 }
