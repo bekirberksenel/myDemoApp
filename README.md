@@ -4,4 +4,4 @@ Code checks them and return true.
 
 [![Build Status](https://travis-ci.org/bekirberksenel/myDemoApp.svg?branch=master)](https://travis-ci.org/bekirberksenel/myDemoApp)
 
-Demo site: https://stark-wave-45713.herokuapp.com/
+Demo site: https://bekirberksenel.herokuapp.com/
