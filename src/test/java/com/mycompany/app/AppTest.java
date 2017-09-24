@@ -29,22 +29,22 @@ public class AppTest
         assertTrue( true );
     }
     public void testArrayIsNotFound(){
-      assertFalse(new App().search(null,1,"bekir"));
+      assertFalse(new App().search(null,"bekir",1));
     }
     public void testArrayIsEmpty(){
       ArrayList<String> array = new ArrayList<>();
-      assertFalse(new App().search(array,1,"Berk"));
+      assertFalse(new App().search(array,"Berk",1));
     }
     public void testBadInt(){
 	ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
-        assertFalse(new App().search(array,-2,"Bekir"));
+        assertFalse(new App().search(array,"Bekir",-2));
     }
     public void testIsNotTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
-      assertFalse(new App().search(array,7,"Bekir"));
+      assertFalse(new App().search(array,"Bekir",7));
     }
      public void testIsTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Bekir","Bekir","Berk"));
-      assertTrue(new App().search(array,2,"Bekir"));
+      assertTrue(new App().search(array,"Bekir",2));
     }
 }
