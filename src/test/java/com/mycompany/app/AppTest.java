@@ -28,16 +28,18 @@ public class AppTest
     public void testApp(){
         assertTrue( true );
     }
-    public void testArrayIsNotFound(){
-      assertFalse((new App().firstLetterSearch(null,"Bekir",1))==-1);
-    }
+    	
     public void testArrayIsEmpty(){
       ArrayList<String> array = new ArrayList<>();
       assertFalse((new App().firstLetterSearch(array,"Berk",1))==1);
     }
-    public void testBadInt(){
-	ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));
-        assertFalse((new App().firstLetterSearch(array,"Bekir",-2))==1);
+    public void testBadList(){
+      ArrayList<String> array = new ArrayList<>("ö","","i","ü"," ","ğ");	    
+      assertFalse((new App().firstLetterSearch(array,"bekir",1))==1);
+    }	
+    public void testBadString(){
+      ArrayList<String> array = new ArrayList<>("ö","","i","ü"," ","ğ");	    
+      assertFalse((new App().firstLetterSearch(array,"1",1))==1);
     }
     public void testIsNotTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));
@@ -45,6 +47,6 @@ public class AppTest
     }
      public void testIsTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));
-      assertFalse((new App().firstLetterSearch(array,"Bekir",2))==2);
+      assertTrue((new App().firstLetterSearch(array,"Bekir",0))==1);
     }
 }
