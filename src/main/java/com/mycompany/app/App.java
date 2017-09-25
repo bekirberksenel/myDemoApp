@@ -11,19 +11,15 @@ import spark.template.mustache.MustacheTemplateEngine;
  *
  */
 public class App{
-    public static boolean search(ArrayList<String> arr, String str,int input){
-      int count = 0;
-      System.out.println("Searching..");
-      if (arr == null) return false;
-    	for(int i = 0; i<arr.size(); i++){
-		if(arr.get(i).equals(str)){
-			count++;	
-		}
+    public static int search(ArrayList<String> arr, String str,int input){
+   	int count = 0;
+	char chr = str.charAt(input);
+	for(int i = 0; i<arr.size(); i++){
+		if(arr.get(i).charAt(0)==chr){
+			count++;
+		}	
 	}
-      if(count == input){
-	      return true;
-      }
-      return false;
+	return count;
     }
     public static void main(String[] args){
         port(getHerokuAssignedPort());
