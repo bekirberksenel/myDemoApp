@@ -39,7 +39,7 @@ public class AppTest
     }	
     public void testBadString(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));	    
-      assertFalse((new App().firstLetterSearch(array,"1",1))==1);
+      assertFalse((new App().firstLetterSearch(array,"1",0))==1);
     }
     public void testIsNotTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));
