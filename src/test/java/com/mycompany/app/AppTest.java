@@ -34,11 +34,11 @@ public class AppTest
       assertFalse((new App().firstLetterSearch(array,"Berk",1))==1);
     }
     public void testBadList(){
-      ArrayList<String> array = new ArrayList<>("1","2","3","4","5");	    
+      ArrayList<String> array = new ArrayList<>(Arrays.asList("1","2","3","4","5","i","ö","ü","ğ"));	    
       assertFalse((new App().firstLetterSearch(array,"bekir",1))==1);
     }	
     public void testBadString(){
-      ArrayList<String> array = new ArrayList<>("Kazım","Kerem","Bekir");	    
+      ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));	    
       assertFalse((new App().firstLetterSearch(array,"1",1))==1);
     }
     public void testIsNotTrue(){
