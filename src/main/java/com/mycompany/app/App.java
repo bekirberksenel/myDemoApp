@@ -40,7 +40,7 @@ public class App{
           String input2 = req.queryParams("input2").replaceAll("\\s","");
 	  String input3 = req.queryParams("input3").replaceAll("\\s","");
 	  int input3Int = Integer.parseInt(input3);
-          boolean result = App.firstLetterSearch(inputList,input2,input3Int);
+          int result = App.firstLetterSearch(inputList,input2,input3Int);
           Map map = new HashMap();
           map.put("result", result);
           return new ModelAndView(map, "compute.mustache");
