@@ -45,6 +45,6 @@ public class AppTest
     }
      public void testIsTrue(){
       ArrayList<String> array = new ArrayList<>(Arrays.asList("Kazım","Kerem","Bekir"));
-      assertTrue((new App().firstLetterSearch(array,"Bekir",2))==2);
+      assertFalse((new App().firstLetterSearch(array,"Bekir",2))==2);
     }
 }
